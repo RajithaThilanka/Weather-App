@@ -1,7 +1,6 @@
 const axios = require('axios');
 
 //Geo API
-
  const getGeo = (location) => { 
  return new Promise((resolve, reject) => {
   const locationurl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + location + '&limit=5&appid=acaf38741d0d59677a3486bd3114bfde'   

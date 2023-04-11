@@ -1,18 +1,8 @@
-const express=require('express')
+const express = require('express');
 const router = express.Router();
-const weather = require('../controllers/Weathercontroller');
-const geo = require('../controllers/geography');
+const userController=require("../controllers/userControllers")
 
-router.route('api/weather').get(Loaction);
+router.get('/getUser', userController.getUser);
+router.get('/getWeather', userController.getWeather);
 
-// geo('Gampaha')
-//     .then((data) => {
-//         //console.log(data);
-//         return weather(data.lat, data.lon);
-//     })
-//     .then((data) => { 
-//         console.log(data);
-//     })
-//     .catch((error) => { 
-//         console.log(error);
-//     })
+module.exports = router;
