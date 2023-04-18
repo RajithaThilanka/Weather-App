@@ -71,7 +71,7 @@ export default function AppBarComp() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Weather-AI
           </Typography>
           <Search>
             <SearchIconWrapper>
