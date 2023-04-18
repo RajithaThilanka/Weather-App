@@ -9,8 +9,9 @@ export default function WeatherForm() {
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
   };
+  
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event,location) => {
     event.preventDefault();
     getWeather(location)
       .then((response) => {
@@ -19,6 +20,7 @@ export default function WeatherForm() {
       .catch((error) => {
         console.error(error);
       });
+    
   };
 
   return (

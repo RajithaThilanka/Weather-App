@@ -7,7 +7,8 @@ class userControllers {
 
      if (!req.body || !req.body.location) {
         return res.status(400).send({ error: 'Location is not set' });
-    }
+        }
+        
   // geo('London')
     const location = req.body.location;
     geo(location)

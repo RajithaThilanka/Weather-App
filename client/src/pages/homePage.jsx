@@ -1,20 +1,19 @@
-import React from 'react'
-import DataFrorm from '../Components/Home/HomePageComp'
-import Stack from '@mui/material/Stack';
+import React from 'react';
+import DataForm from '../Components/Home/HomePageComp';
+import { Stack, Grid } from '@mui/material';
+import AppBarComp from '../Components/Home/Navbar/AppBarComp';
 
-export default function homePage() {
+export default function HomePage() {
   return (
     <div style={{ backgroundColor: '#006064', height: '100vh' }}>
-      <Stack
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        padding={5}
-      >
-        
-      <DataFrorm/>
-      </Stack>
-      
+      <Grid container justifyContent="center" alignItems="center">
+        <Grid item xs={12}>
+          <AppBarComp/> 
+        </Grid>
+        <Grid item xs={12}>
+          <DataForm/>
+        </Grid>
+      </Grid>
     </div>
-  )
+  );
 }
