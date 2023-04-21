@@ -11,17 +11,18 @@ export default function WeatherForm() {
   };
   
 
-  const handleSubmit = (event,location) => {
-    event.preventDefault();
-    getWeather(location)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-    
-  };
+const handleSubmit = (event) => {
+  event.preventDefault();
+  console.log(location);
+  getWeather(location)
+    .then((response) => {
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+};
+
 
   return (
     <div>
@@ -33,7 +34,7 @@ export default function WeatherForm() {
           <Typography variant="h5">Realtime Weather Detection System</Typography>
           <Stack direction="row" spacing={2}>
             <TextField label="Enter Location" variant="outlined" value={location} onChange={handleLocationChange} />
-            <Button variant="contained" onClick={handleSubmit}>
+            <Button variant="contained"  onClick={handleSubmit}>
               Submit
             </Button>
           </Stack>

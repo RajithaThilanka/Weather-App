@@ -7,7 +7,9 @@ dotenv.config({ path: './config.env' });
 const port = process.env.PORT;
 const bodyParser = require('body-parser');
 const weather = require('./routes/weatherRoutes');
+const cors = require('cors');
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
