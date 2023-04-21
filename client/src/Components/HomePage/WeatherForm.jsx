@@ -5,7 +5,7 @@ import { getWeather } from '../../api/userRequests';
 
 export default function WeatherForm() {
   const [location, setLocation] = useState('');
-  
+  const [Weatherdata, setWeatherData] = useState(null);
   const handleLocationChange = (event) => {
     setLocation(event.target.value);
   };
@@ -17,6 +17,8 @@ const handleSubmit = (event) => {
   getWeather(location)
     .then((response) => {
       console.log(response.data);
+      setWeatherData(response.data);
+      console.log(Weatherdata);
     })
     .catch((error) => {
       console.error(error);
@@ -37,6 +39,27 @@ const handleSubmit = (event) => {
             <Button variant="contained"  onClick={handleSubmit}>
               Submit
             </Button>
+          </Stack>
+          <Stack direction="row" spacing={2}>
+            <Stack direction="column" spacing={2}>
+              <Stack direction="column">
+                  <Typography>Longitude : {Weatherdata.weather.coord.lon}</Typography>
+                  <Typography>Latitude : {Weatherdata.weather.coord.lat}</Typography>
+                  <Typography>Name : {Weatherdata.name}</Typography>
+                  <Typography>Base : {Weatherdata.weather.weather.main}</Typography>
+                  <Typography>Clouds : {Weatherdata.weather.clouds.all}</Typography>
+                  <Typography>Main: {Weatherdata.name}</Typography>
+                  <Typography>Description : {Weatherdata.name}</Typography>
+                  <Typography>Wind : {Weatherdata.name}</Typography>
+                  <Typography>Name : {Weatherdata.name}</Typography>
+                  <Typography>Name : {Weatherdata.name}</Typography>
+              </Stack>
+
+
+            </Stack>
+            <Stack direction="column" spacing={2}>
+              
+            </Stack>
           </Stack>
         </Stack>
       </Box>
